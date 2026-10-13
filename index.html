@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ERP Simulado | Gestión empresarial</title>
+<style>
+:root{--navy:#172846;--blue:#3478e5;--bg:#f4f7fc;--ink:#203352;--muted:#6b7c98;--line:#e2eaf5;--green:#13a987;--pink:#ed5b91;--purple:#865be8;--orange:#f49a38}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;background:var(--blue);color:white;font-weight:650}button:hover{filter:brightness(.96)}.app{min-height:100vh;display:grid;grid-template-columns:235px 1fr}.side{background:linear-gradient(180deg,#172846,#203858);color:white;padding:22px 14px;display:flex;flex-direction:column;gap:8px}.brand{display:flex;align-items:center;gap:10px;padding:0 8px 24px}.logo{background:#3478e5;border-radius:12px;width:42px;height:42px;display:grid;place-items:center;font-size:24px}.brand b{font-size:22px;letter-spacing:.4px}.brand small{display:block;font-size:11px;color:#c4d2e9;margin-top:3px}.nav{display:flex;align-items:center;gap:12px;text-align:left;background:transparent;color:#e9effa;padding:13px 14px;border-radius:10px;font-weight:500}.nav.active,.nav:hover{background:#3478e5;color:#fff}.nav span{width:22px;text-align:center;font-size:18px}.side-note{margin-top:auto;border:1px solid #54719a;border-radius:12px;padding:14px;font-size:13px;line-height:1.6;color:#dce7f8}.main{min-width:0}.top{background:white;border-bottom:1px solid var(--line);padding:16px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px}.search{max-width:520px;width:100%;padding:12px 15px;border:1px solid var(--line);border-radius:10px;background:#fbfdff}.user{font-size:13px;color:var(--muted);white-space:nowrap}.content{padding:24px;max-width:1500px;margin:auto}.welcome{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:22px}.welcome h1{font-size:26px;margin:0 0 6px;color:#172d52}.welcome p{margin:0;color:var(--muted)}.date{font-size:13px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}.metric{padding:18px;border-radius:13px;border:1px solid var(--line);background:white}.metric:nth-child(1){background:#e8faf5;border-color:#c8f0e5}.metric:nth-child(2){background:#eaf2ff;border-color:#d3e2ff}.metric:nth-child(3){background:#fff0f5;border-color:#fbdce8}.metric:nth-child(4){background:#f2edff;border-color:#e3d9ff}.metric .label{font-size:13px;color:#405777}.metric .num{font-size:27px;font-weight:800;margin:12px 0 5px;color:#1d355d}.metric small{color:#64809f}.grid{display:grid;grid-template-columns:1fr 1fr 1.35fr;gap:16px;margin-bottom:16px}.panel{background:white;border:1px solid var(--line);border-radius:13px;padding:17px;min-width:0}.panel h2{font-size:17px;margin:0 0 16px;color:#1b335b}.bar-chart{height:190px;display:flex;align-items:end;justify-content:space-around;gap:12px;border-bottom:1px solid #dfe8f4;padding:12px 6px 0;background:repeating-linear-gradient(to top,transparent 0,transparent 43px,#edf2f9 44px)}.bar-col{height:100%;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:7px;flex:1;font-size:12px;color:var(--muted)}.bar{width:min(42px,80%);border-radius:7px 7px 0 0;background:var(--blue);min-height:5px}.bar:nth-child(1){background:#4388f5}.bar-col:nth-child(2) .bar{background:#8a60e9}.bar-col:nth-child(3) .bar{background:#29b8c0}.bar-col:nth-child(4) .bar{background:#f05b94}.products{display:flex;flex-direction:column;gap:13px}.product-line{display:flex;align-items:center;gap:9px;font-size:13px}.dot{width:10px;height:10px;border-radius:50%;background:var(--blue)}.product-line span:last-child{margin-left:auto;font-weight:700}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap}th,td{text-align:left;padding:10px 7px;border-bottom:1px solid #edf1f7}th{color:#72819a;font-weight:650;background:#f8faff}td{color:#334968}.status{display:inline-block;padding:4px 8px;border-radius:7px;background:#dff8ee;color:#078568;font-size:11px}.status.low{background:#fff1cf;color:#a36a00}.lower{display:grid;grid-template-columns:1.15fr 1.15fr 1fr;gap:16px}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.quick button{min-height:66px;line-height:1.3}.quick button:nth-child(1){background:#18ae94}.quick button:nth-child(2){background:#3478e5}.quick button:nth-child(3){background:#8b5ce8}.quick button:nth-child(4){background:#f49a38}.quick button:nth-child(5){background:#e9578e}.quick button:nth-child(6){background:#27b4c0}.account-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px}.account-row strong{font-size:14px}.view{display:none}.view.active{display:block}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.section-head h1{margin:0;font-size:25px}.section-head p{color:var(--muted);margin:6px 0 0}.form-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px}.form-row input,.form-row select{padding:11px 12px;border:1px solid #dce5f1;border-radius:9px;background:white;min-width:145px;flex:1}.form-row button{min-width:140px}.notice{background:#eef5ff;border:1px solid #d9e7ff;padding:13px 15px;border-radius:10px;color:#385b8a;font-size:13px;line-height:1.5;margin-bottom:16px}.empty{text-align:center;padding:25px;color:var(--muted)}footer{text-align:center;color:#7c8da7;font-size:12px;padding:24px}
+@media(max-width:1100px){.app{grid-template-columns:190px 1fr}.cards{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr 1fr}.grid .panel:last-child{grid-column:1/-1}.lower{grid-template-columns:1fr 1fr}.lower .panel:last-child{grid-column:1/-1}}
+@media(max-width:700px){.app{display:block}.side{position:static;padding:12px;display:flex;flex-direction:row;flex-wrap:wrap;align-items:center}.brand{width:100%;padding:3px 5px 10px}.nav{padding:9px 10px;font-size:12px;gap:6px}.side-note{display:none}.top{padding:12px}.user{display:none}.content{padding:15px}.welcome{align-items:flex-start;flex-direction:column}.welcome h1{font-size:22px}.cards{gap:9px}.metric{padding:13px}.metric .num{font-size:22px}.grid,.lower{grid-template-columns:1fr}.grid .panel:last-child,.lower .panel:last-child{grid-column:auto}.quick{grid-template-columns:repeat(2,1fr)}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+  <div class="brand"><div class="logo">◆</div><div><b>ERP</b><small>Sistema de Gestión Empresarial</small></div></div>
+  <button class="nav active" data-view="inicio"><span>⌂</span>Inicio</button>
+  <button class="nav" data-view="ventas"><span>🛒</span>Ventas</button>
+  <button class="nav" data-view="inventario"><span>▣</span>Inventario</button>
+  <button class="nav" data-view="compras"><span>📦</span>Compras</button>
+  <button class="nav" data-view="clientes"><span>♟</span>Clientes</button>
+  <button class="nav" data-view="proveedores"><span>🚚</span>Proveedores</button>
+  <button class="nav" data-view="contabilidad"><span>▤</span>Contabilidad</button>
+  <button class="nav" data-view="reportes"><span>▥</span>Reportes</button>
+  <div class="side-note">💡 Un ERP integra las áreas de tu empresa en un solo lugar.</div>
+</aside>
+<main class="main">
+  <header class="top"><input class="search" id="globalSearch" placeholder="⌕  Buscar producto, cliente o sección..." aria-label="Buscar"/><div class="user">🔔 &nbsp; <b>Administración</b> · Modo demostración</div></header>
+  <div class="content">
+    <section class="view active" id="view-inicio">
+      <div class="welcome"><div><h1>👋 ¡Bienvenida a tu ERP!</h1><p>Administra un negocio de ejemplo desde un solo lugar.</p></div><div class="date">📅 <span id="today"></span></div></div>
+      <div class="cards">
+        <div class="metric"><div class="label">Ventas registradas</div><div class="num" id="metricSales">$2,480.00</div><small>↗ Resumen de ventas</small></div>
+        <div class="metric"><div class="label">Productos en inventario</div><div class="num" id="metricStock">85</div><small>▣ Existencias actuales</small></div>
+        <div class="metric"><div class="label">Compras registradas</div><div class="num" id="metricPurchases">$1,320.00</div><small>↗ Resumen de compras</small></div>
+        <div class="metric"><div class="label">Clientes registrados</div><div class="num" id="metricClients">3</div><small>♟ Base de clientes</small></div>
+      </div>
+      <div class="grid">
+        <div class="panel"><h2>Ventas por mes (ejemplo)</h2><div class="bar-chart"><div class="bar-col"><div class="bar" style="height:42%"></div>Ene</div><div class="bar-col"><div class="bar" style="height:55%"></div>Feb</div><div class="bar-col"><div class="bar" style="height:67%"></div>Mar</div><div class="bar-col"><div class="bar" style="height:85%"></div>Abr</div></div></div>
+        <div class="panel"><h2>Productos destacados</h2><div class="products"><div class="product-line"><i class="dot"></i> Camiseta básica <span>35%</span></div><div class="product-line"><i class="dot" style="background:#8a60e9"></i> Mochila urbana <span>25%</span></div><div class="product-line"><i class="dot" style="background:#29b8c0"></i> Audífonos <span>20%</span></div><div class="product-line"><i class="dot" style="background:#f49a38"></i> Otros productos <span>20%</span></div></div><div class="notice" style="margin-top:18px;margin-bottom:0">Los gráficos son ilustrativos y se actualizan parcialmente con tus registros.</div></div>
+        <div class="panel"><h2>Últimas ventas</h2><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Cliente</th><th>Total</th></tr></thead><tbody id="recentSales"></tbody></table></div></div>
+      </div>
+      <div class="lower">
+        <div class="panel"><h2>Acciones rápidas</h2><div class="quick"><button data-go="ventas">＋ Registrar venta</button><button data-go="inventario">＋ Agregar producto</button><button data-go="compras">＋ Registrar compra</button><button data-go="clientes">＋ Nuevo cliente</button><button data-go="proveedores">＋ Proveedor</button><button data-go="reportes">▥ Ver reportes</button></div></div>
+        <div class="panel"><h2>Inventario reciente</h2><div class="table-wrap"><table><thead><tr><th>Producto</th><th>Stock</th><th>Estado</th></tr></thead><tbody id="miniStock"></tbody></table></div></div>
+        <div class="panel"><h2>Resumen contable</h2><div class="account-row"><span>Ingresos</span><strong id="income">$2,480.00</strong></div><div class="account-row"><span>Compras / gastos</span><strong id="expenses">$1,320.00</strong></div><div class="account-row"><span>Resultado simple</span><strong id="profit">$1,160.00</strong></div><p style="font-size:11px;color:var(--muted)">Cálculo demostrativo; no sustituye la contabilidad formal.</p></div>
+      </div>
+    </section>
+    <section class="view" id="view-ventas">
+      <div class="section-head"><div><h1>Ventas</h1><p>Registra una venta y descuenta productos del inventario.</p></div></div>
+      <div class="notice">Simulación educativa: los registros se guardan en este navegador mientras no borres sus datos.</div>
+      <div class="panel"><h2>Registrar venta</h2><form id="saleForm" class="form-row"><input id="saleCustomer" placeholder="Nombre del cliente" required><select id="saleProduct" required></select><input id="saleQty" type="number" min="1" value="1" required style="max-width:120px"><button type="submit">Registrar venta</button></form></div>
+      <div class="panel" style="margin-top:16px"><h2>Historial de ventas</h2><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Cliente</th><th>Producto</th><th>Cantidad</th><th>Total</th></tr></thead><tbody id="salesTable"></tbody></table></div></div>
+    </section>
+    <section class="view" id="view-inventario">
+      <div class="section-head"><div><h1>Inventario</h1><p>Controla los productos y las existencias.</p></div></div>
+      <div class="panel"><h2>Agregar producto</h2><form id="productForm" class="form-row"><input id="prodName" placeholder="Nombre del producto" required><input id="prodPrice" type="number" min=".01" step=".01" placeholder="Precio ($)" required><input id="prodStock" type="number" min="0" step="1" placeholder="Existencias" required><button type="submit">Agregar producto</button></form></div>
+      <div class="panel" style="margin-top:16px"><h2>Productos disponibles</h2><div class="table-wrap"><table><thead><tr><th>Producto</th><th>Precio</th><th>Existencias</th><th>Estado</th><th>Acción</th></tr></thead><tbody id="stockTable"></tbody></table></div></div>
+    </section>
+    <section class="view" id="view-compras">
+      <div class="section-head"><div><h1>Compras</h1><p>Registra compras y aumenta las existencias.</p></div></div>
+      <div class="panel"><h2>Registrar compra</h2><form id="purchaseForm" class="form-row"><input id="purchaseSupplier" placeholder="Nombre del proveedor" required><select id="purchaseProduct" required></select><input id="purchaseQty" type="number" min="1" value="1" required style="max-width:120px"><button type="submit">Registrar compra</button></form></div>
+      <div class="panel" style="margin-top:16px"><h2>Historial de compras</h2><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Proveedor</th><th>Producto</th><th>Cantidad</th><th>Total estimado</th></tr></thead><tbody id="purchasesTable"></tbody></table></div></div>
+    </section>
+    <section class="view" id="view-clientes">
+      <div class="section-head"><div><h1>Clientes</h1><p>Guarda una lista de clientes de ejemplo.</p></div></div>
+      <div class="panel"><h2>Agregar cliente</h2><form id="clientForm" class="form-row"><input id="clientName" placeholder="Nombre completo" required><input id="clientContact" placeholder="Teléfono o correo (opcional)"><button type="submit">Guardar cliente</button></form></div>
+      <div class="panel" style="margin-top:16px"><h2>Lista de clientes</h2><div class="table-wrap"><table><thead><tr><th>Nombre</th><th>Contacto</th></tr></thead><tbody id="clientsTable"></tbody></table></div></div>
+    </section>
+    <section class="view" id="view-proveedores">
+      <div class="section-head"><div><h1>Proveedores</h1><p>Organiza los contactos de quienes te venden productos.</p></div></div>
+      <div class="panel"><h2>Agregar proveedor</h2><form id="supplierForm" class="form-row"><input id="supplierName" placeholder="Nombre del proveedor" required><input id="supplierContact" placeholder="Teléfono o correo (opcional)"><button type="submit">Guardar proveedor</button></form></div>
+      <div class="panel" style="margin-top:16px"><h2>Lista de proveedores</h2><div class="table-wrap"><table><thead><tr><th>Nombre</th><th>Contacto</th></tr></thead><tbody id="suppliersTable"></tbody></table></div></div>
+    </section>
+    <section class="view" id="view-contabilidad">
+      <div class="section-head"><div><h1>Contabilidad básica</h1><p>Vista sencilla de los movimientos registrados.</p></div></div>
+      <div class="notice">Este módulo es únicamente para aprender cómo se relacionan las ventas y compras. No calcula impuestos ni reemplaza un sistema contable autorizado.</div>
+      <div class="cards"><div class="metric"><div class="label">Ingresos por ventas</div><div class="num" id="accIncome">$0.00</div></div><div class="metric"><div class="label">Costo estimado de compras</div><div class="num" id="accExpense">$0.00</div></div><div class="metric"><div class="label">Diferencia</div><div class="num" id="accDifference">$0.00</div></div><div class="metric"><div class="label">Movimientos</div><div class="num" id="accCount">0</div></div></div>
+      <div class="panel"><h2>Cómo funciona</h2><p>Cuando registras una venta, el sistema suma ingresos y reduce existencias. Cuando registras una compra, suma el costo de compra y aumenta las existencias. La diferencia es un cálculo simple para fines educativos.</p></div>
+    </section>
+    <section class="view" id="view-reportes">
+      <div class="section-head"><div><h1>Reportes</h1><p>Consulta un resumen de la actividad del negocio.</p></div><button id="exportBtn">Descargar reporte CSV</button></div>
+      <div class="cards"><div class="metric"><div class="label">Total de ventas</div><div class="num" id="reportSales">$0.00</div></div><div class="metric"><div class="label">Total de compras</div><div class="num" id="reportPurchases">$0.00</div></div><div class="metric"><div class="label">Unidades disponibles</div><div class="num" id="reportUnits">0</div></div><div class="metric"><div class="label">Clientes</div><div class="num" id="reportClients">0</div></div></div>
+      <div class="panel"><h2>Resumen del negocio</h2><p id="reportText">Registra operaciones en las secciones de Ventas, Inventario y Compras para actualizar los reportes.</p></div>
+    </section>
+    <footer>ERP Simulado · Herramienta educativa · Tu negocio, mejor organizado ✦</footer>
+  </div>
+</main>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(n||0);
+const dateNow=()=>new Date().toLocaleDateString('es-SV');
+$('today').textContent=dateNow();
+const seed={
+ products:[{id:1,name:'Camiseta básica',price:12,stock:35},{id:2,name:'Mochila urbana',price:25,stock:20},{id:3,name:'Audífonos',price:18,stock:15},{id:4,name:'Botella reutilizable',price:8,stock:15}],
+ clients:[{name:'María Torres',contact:'maria@email.com'},{name:'Carlos Méndez',contact:'5555-1234'},{name:'Lucía Ramírez',contact:'lucia@email.com'}],
+ suppliers:[{name:'Distribuidora Central',contact:'2222-0000'},{name:'Comercial El Sol',contact:'ventas@elsol.com'}],
+ sales:[{date:dateNow(),customer:'María Torres',product:'Camiseta básica',qty:2,total:24},{date:dateNow(),customer:'Carlos Méndez',product:'Mochila urbana',qty:1,total:25}],
+ purchases:[{date:dateNow(),supplier:'Distribuidora Central',product:'Camiseta básica',qty:10,total:80}]
+};
+let data;
+try{data=JSON.parse(localStorage.getItem('erpSimuladoData'))||seed}catch(e){data=seed}
+function save(){localStorage.setItem('erpSimuladoData',JSON.stringify(data))}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function productOptions(id){$(id).innerHTML=data.products.map(p=>`<option value="${p.id}">${esc(p.name)} — ${money(p.price)} (stock: ${p.stock})</option>`).join('')}
+function render(){
+ const stockUnits=data.products.reduce((s,p)=>s+p.stock,0), sales=data.sales.reduce((s,x)=>s+x.total,0), purchases=data.purchases.reduce((s,x)=>s+x.total,0);
+ $('metricSales').textContent=money(sales);$('metricStock').textContent=stockUnits;$('metricPurchases').textContent=money(purchases);$('metricClients').textContent=data.clients.length;
+ $('income').textContent=money(sales);$('expenses').textContent=money(purchases);$('profit').textContent=money(sales-purchases);
+ $('recentSales').innerHTML=[...data.sales].slice(-5).reverse().map(s=>`<tr><td>${esc(s.date)}</td><td>${esc(s.customer)}</td><td>${money(s.total)}</td></tr>`).join('')||'<tr><td colspan="3">Sin ventas todavía</td></tr>';
+ $('miniStock').innerHTML=data.products.slice(0,5).map(p=>`<tr><td>${esc(p.name)}</td><td>${p.stock}</td><td><span class="status ${p.stock<5?'low':''}">${p.stock<5?'Stock bajo':'Disponible'}</span></td></tr>`).join('');
+ $('stockTable').innerHTML=data.products.map(p=>`<tr><td>${esc(p.name)}</td><td>${money(p.price)}</td><td>${p.stock}</td><td><span class="status ${p.stock<5?'low':''}">${p.stock<5?'Stock bajo':'Disponible'}</span></td><td><button class="delete-product" data-id="${p.id}" style="padding:6px 9px;background:#e95a72">Eliminar</button></td></tr>`).join('')||'<tr><td colspan="5">No hay productos</td></tr>';
+ $('salesTable').innerHTML=[...data.sales].reverse().map(s=>`<tr><td>${esc(s.date)}</td><td>${esc(s.customer)}</td><td>${esc(s.product)}</td><td>${s.qty}</td><td>${money(s.total)}</td></tr>`).join('')||'<tr><td colspan="5">Todavía no hay ventas</td></tr>';
+ $('purchasesTable').innerHTML=[...data.purchases].reverse().map(p=>`<tr><td>${esc(p.date)}</td><td>${esc(p.supplier)}</td><td>${esc(p.product)}</td><td>${p.qty}</td><td>${money(p.total)}</td></tr>`).join('')||'<tr><td colspan="5">Todavía no hay compras</td></tr>';
+ $('clientsTable').innerHTML=data.clients.map(c=>`<tr><td>${esc(c.name)}</td><td>${esc(c.contact||'—')}</td></tr>`).join('');
+ $('suppliersTable').innerHTML=data.suppliers.map(c=>`<tr><td>${esc(c.name)}</td><td>${esc(c.contact||'—')}</td></tr>`).join('');
+ $('accIncome').textContent=money(sales);$('accExpense').textContent=money(purchases);$('accDifference').textContent=money(sales-purchases);$('accCount').textContent=data.sales.length+data.purchases.length;
+ $('reportSales').textContent=money(sales);$('reportPurchases').textContent=money(purchases);$('reportUnits').textContent=stockUnits;$('reportClients').textContent=data.clients.length;
+ $('reportText').textContent=`El negocio tiene ${data.products.length} tipos de productos, ${stockUnits} unidades en existencia, ${data.sales.length} ventas y ${data.purchases.length} compras registradas. El total de ventas es ${money(sales)} y el de compras ${money(purchases)}.`;
+ productOptions('saleProduct');productOptions('purchaseProduct');
+}
+function showView(name){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+name));document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b.dataset.view===name));if(name==='ventas')productOptions('saleProduct');if(name==='compras')productOptions('purchaseProduct');window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('.nav').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.go)));
+$('saleForm').addEventListener('submit',e=>{e.preventDefault();let p=data.products.find(p=>p.id===Number($('saleProduct').value)),qty=Number($('saleQty').value),customer=$('saleCustomer').value.trim();if(!p||qty<1)return;if(p.stock<qty){alert('No hay suficientes unidades en inventario.');return}p.stock-=qty;data.sales.push({date:dateNow(),customer,product:p.name,qty,total:p.price*qty});if(!data.clients.some(c=>c.name.toLowerCase()===customer.toLowerCase()))data.clients.push({name:customer,contact:''});save();render();$('saleForm').reset();$('saleQty').value=1;alert('¡Venta registrada correctamente!')});
+$('productForm').addEventListener('submit',e=>{e.preventDefault();data.products.push({id:Date.now(),name:$('prodName').value.trim(),price:Number($('prodPrice').value),stock:Number($('prodStock').value)});save();render();e.target.reset();alert('Producto agregado al inventario.')});
+$('purchaseForm').addEventListener('submit',e=>{e.preventDefault();let p=data.products.find(p=>p.id===Number($('purchaseProduct').value)),qty=Number($('purchaseQty').value),supplier=$('purchaseSupplier').value.trim();if(!p||qty<1)return;p.stock+=qty;data.purchases.push({date:dateNow(),supplier,product:p.name,qty,total:p.price*qty});if(!data.suppliers.some(s=>s.name.toLowerCase()===supplier.toLowerCase()))data.suppliers.push({name:supplier,contact:''});save();render();e.target.reset();$('purchaseQty').value=1;alert('¡Compra registrada y stock actualizado!')});
+$('clientForm').addEventListener('submit',e=>{e.preventDefault();data.clients.push({name:$('clientName').value.trim(),contact:$('clientContact').value.trim()});save();render();e.target.reset();alert('Cliente guardado.')});
+$('supplierForm').addEventListener('submit',e=>{e.preventDefault();data.suppliers.push({name:$('supplierName').value.trim(),contact:$('supplierContact').value.trim()});save();render();e.target.reset();alert('Proveedor guardado.')});
+$('stockTable').addEventListener('click',e=>{let b=e.target.closest('.delete-product');if(b&&confirm('¿Eliminar este producto?')){data.products=data.products.filter(p=>p.id!==Number(b.dataset.id));save();render()}});
+$('exportBtn').addEventListener('click',()=>{const rows=[['Tipo','Fecha','Nombre','Producto','Cantidad','Total'],...data.sales.map(x=>['Venta',x.date,x.customer,x.product,x.qty,x.total]),...data.purchases.map(x=>['Compra',x.date,x.supplier,x.product,x.qty,x.total])];const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}));a.download='reporte-erp.csv';a.click();URL.revokeObjectURL(a.href)});
+$('globalSearch').addEventListener('keydown',e=>{if(e.key==='Enter'){const q=e.target.value.toLowerCase();const match=data.products.find(p=>p.name.toLowerCase().includes(q));if(match){showView('inventario');setTimeout(()=>{const row=[...$('stockTable').rows].find(r=>r.cells[0]?.textContent.toLowerCase().includes(q));if(row)row.scrollIntoView({behavior:'smooth',block:'center'})},30)}else if(q.includes('venta'))showView('ventas');else if(q.includes('cliente'))showView('clientes');else if(q.includes('compra'))showView('compras');else alert('No se encontró coincidencia. Prueba con el nombre de un producto o una sección.')}});
+render();
+</script>
+</body>
+</html>
